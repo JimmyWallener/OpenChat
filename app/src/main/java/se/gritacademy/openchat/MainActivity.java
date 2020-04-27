@@ -3,15 +3,13 @@ package se.gritacademy.openchat;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mFirebaseAuth;
-    private FirebaseUser mFirebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void signInUser(View view) {
+        startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void registerNewUser(View view) {
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 }

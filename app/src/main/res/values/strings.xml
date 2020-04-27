@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Open Chat</string>
+    <string name="register_bth">Click to register account</string>
+    <string name="register_txt">REGISTER NEW ACCOUNT</string>
+    <string name="welcome_txt">WELCOME TO OPEN CHAT</string>
+    <string name="existing_user_login">LOGIN TO CHAT</string>
+    <string name="register_newuser">NEW HERE?\n REGISTER ACCOUNT</string>
+    <string name="register_newuser_btn">REGISTER NEW ACCOUNT</string>
+    <string name="login_btn">SIGN IN WITH EMAIL</string>
+    <string name="hint_email">ENTER YOUR EMAIL:</string>
+    <string name="hint_username">ENTER AN ALIAS:</string>
+    <string name="hint_password">ENTER A PASSWORD:</string>
 </resources>
