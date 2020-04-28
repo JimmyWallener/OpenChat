@@ -10,4 +10,5 @@
     <string name="hint_email">ENTER YOUR EMAIL:</string>
     <string name="hint_username">ENTER USERNAME:</string>
     <string name="hint_password">ENTER PASSWORD:</string>
+    <string name="text_placeholder">TextView</string>
 </resources>
