@@ -8,6 +8,6 @@
     <string name="register_newuser_btn">REGISTER NEW ACCOUNT</string>
     <string name="login_btn">SIGN IN WITH EMAIL</string>
     <string name="hint_email">ENTER YOUR EMAIL:</string>
-    <string name="hint_username">ENTER AN ALIAS:</string>
-    <string name="hint_password">ENTER A PASSWORD:</string>
+    <string name="hint_username">ENTER USERNAME:</string>
+    <string name="hint_password">ENTER PASSWORD:</string>
 </resources>
