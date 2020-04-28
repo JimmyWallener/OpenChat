@@ -22,7 +22,6 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String ERROR_PASSWORD = "Required Field - Min 8 Characters";
 
     private EditText mUsername, mEmail, mPassword;
-    Button registerBtn;
 
 
     @Override
@@ -33,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         mUsername = findViewById(R.id.username);
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
-        registerBtn = findViewById(R.id.register_btn);
 
     }
 
