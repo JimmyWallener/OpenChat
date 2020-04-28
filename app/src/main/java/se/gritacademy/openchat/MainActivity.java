@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signInUser(View view) {
-        startActivity(new Intent(this, LoginActivity.class));
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     public void registerNewUser(View view) {
