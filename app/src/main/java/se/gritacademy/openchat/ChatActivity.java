@@ -74,16 +74,12 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view) {
-
-        // due to username returning null from addValueEvenListener, I tested it outside the if-statement
-        // to see if db gets anything pushed, which it gets.
-
-        mChat.push().setValue(new ChatModel(userMessage.getText().toString(), username, System.currentTimeMillis()));
-        /*if(userMessage.getText() != null) {
+        
+        if(userMessage.getText() != null) {
             if(!userMessage.getText().toString().equals("") && username != null) {
-
+                mChat.push().setValue(new ChatModel(userMessage.getText().toString(), username, System.currentTimeMillis()));
             }
-        }*/
+        }
     }
 
     public void showChatMessage(){
