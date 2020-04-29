@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-
+    // If validation is true, create new account with register controller.
     public void registerAccount(View view) {
 
         RegisterController rc = new RegisterController();

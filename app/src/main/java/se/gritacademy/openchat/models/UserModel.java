@@ -2,17 +2,17 @@ package se.gritacademy.openchat.models;
 
 public class UserModel {
 
-    private String username, name, uid, email;
-    private Long lastLogin;
+    private String username, uid, email;
+    private Long timeStamp;
 
     public UserModel() {
     }
 
-    public UserModel(String username, String uid, String email, Long lastLogin) {
+    public UserModel(String username, String uid, String email, Long timeStamp) {
         this.username = username;
         this.uid = uid;
         this.email = email;
-        this.lastLogin = lastLogin;
+        this.timeStamp = timeStamp;
     }
 
 
@@ -40,11 +40,11 @@ public class UserModel {
         this.email = email;
     }
 
-    public Long getLastLogin() {
-        return lastLogin;
+    public Long getTimeStamp() {
+        return timeStamp;
     }
 
-    public void setLastLogin(Long lastLogin) {
-        this.lastLogin = lastLogin;
+    public void setTimeStamp(Long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

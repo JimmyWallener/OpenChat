@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.password_login);
     }
 
+    // If validation is true, send data to Authcontroller for verification and login
     public void signExistingUser(View view) {
         AuthController auth = new AuthController();
         String newEmail = mEmail.getText().toString();

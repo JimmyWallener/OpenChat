@@ -40,7 +40,7 @@ public class RegisterController {
                     assert fb != null;
 
 
-
+                    //Creates a new account with username, email and date of creation
                     mDB = FirebaseDatabase.getInstance().getReference().child("Users");
                     mDB.child(Objects.requireNonNull(mAuth.getUid())).setValue(
                             new UserModel(username, mAuth.getUid(),fb.getEmail(), System.currentTimeMillis()))
@@ -48,12 +48,12 @@ public class RegisterController {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Log.w(TAG, "Userdata has been set:success");
+                                        Log.d(TAG, "Userdata has been set:success");
                                     }
                                 }
                             });
                 } else {
-                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                    Log.d(TAG, "createUserWithEmail:failure", task.getException());
                     Toast.makeText(context.getApplicationContext(), "Email already in use", Toast.LENGTH_SHORT).show();
                 }
             }

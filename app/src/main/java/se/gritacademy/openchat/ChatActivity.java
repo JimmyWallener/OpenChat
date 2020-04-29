@@ -59,6 +59,7 @@ public class ChatActivity extends AppCompatActivity {
 
         showChatMessage();
 
+        // Get username from db for use in sendMessage method
         mUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -78,6 +79,7 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    // Pushes message,username,timestamp via constructor to db
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void sendMessage(View view) {
 
@@ -91,6 +93,7 @@ public class ChatActivity extends AppCompatActivity {
         Objects.requireNonNull(userMessage.getText()).clear();
     }
 
+    // Using firebaselistoption to populate chatscreen.
     public void showChatMessage(){
         ListView messages = findViewById(R.id.list_message);
 
