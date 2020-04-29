@@ -2,9 +2,12 @@ package se.gritacademy.openchat;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
+
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 import se.gritacademy.openchat.models.ChatModel;
 import se.gritacademy.openchat.models.UserModel;
 
@@ -35,7 +40,7 @@ public class ChatActivity extends AppCompatActivity {
     EditText userMessage;
     FirebaseAuth mAuth;
     DatabaseReference mChat, mUser;
-    ListAdapter adapter;
+    FirebaseListAdapter adapter;
     String username = "null";
 
     @Override
@@ -73,35 +78,40 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void sendMessage(View view) {
-        
+
         if(userMessage.getText() != null) {
             if(!userMessage.getText().toString().equals("") && username != null) {
                 mChat.push().setValue(new ChatModel(userMessage.getText().toString(), username, System.currentTimeMillis()));
+                Log.d(TAG, "usermessage pushed: success " + username + " " + userMessage);
+
             }
         }
+        Objects.requireNonNull(userMessage.getText()).clear();
     }
 
     public void showChatMessage(){
         ListView messages = findViewById(R.id.list_message);
 
-        Query query = FirebaseDatabase.getInstance().getReference().child("chats");
+        Query query = mChat;
+        Log.d(TAG,"mChat data: " +mChat);
         FirebaseListOptions<ChatModel> options =
                 new FirebaseListOptions.Builder<ChatModel>().setQuery(query, ChatModel.class)
-                .setLayout(R.layout.messages).build();
+                        .setLayout(R.layout.messages).setLifecycleOwner(this).build();
 
         adapter = new FirebaseListAdapter<ChatModel>(options) {
             @Override
             protected void populateView(@NonNull View v, @NonNull ChatModel model, int position) {
                 TextView messageText, messageUser, messageTime;
 
-                    messageText = v.findViewById(R.id.message_text);
-                    messageUser = v.findViewById(R.id.message_user);
-                    messageTime = v.findViewById(R.id.message_time);
+                messageText = v.findViewById(R.id.message_text);
+                messageUser = v.findViewById(R.id.message_user);
+                messageTime = v.findViewById(R.id.message_time);
 
-                    messageText.setText(model.getMessage());
-                    messageUser.setText(model.getName());
-                    messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimestamp()));
+                messageText.setText(model.getMessage());
+                messageUser.setText(model.getName());
+                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimestamp()));
             }
         };
         messages.setAdapter(adapter);
