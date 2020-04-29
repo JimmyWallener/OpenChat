@@ -19,24 +19,14 @@ public class ChatModel {
             return message;
         }
 
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
         public String getName() {
             return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
         }
 
         public Long getTimestamp() {
             return timestamp;
         }
 
-        public void setTimestamp(Long timestamp) {
-            this.timestamp = timestamp;
-        }
-    }
+
+}
 
