@@ -1,4 +1,4 @@
-package se.gritacademy.openchat.models;
+package se.gritacademy.openchat.controller;
 
 import android.content.Context;
 import android.os.Build;
@@ -18,8 +18,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
+import se.gritacademy.openchat.models.UserModel;
 
-public class RegisterController {
+
+public class Register {
 
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;

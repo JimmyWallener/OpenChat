@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import se.gritacademy.openchat.models.AuthController;
+import se.gritacademy.openchat.controller.Auth;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // If validation is true, send data to Authcontroller for verification and login
     public void signExistingUser(View view) {
-        AuthController auth = new AuthController();
+        Auth auth = new Auth();
         String newEmail = mEmail.getText().toString();
         String newPassword = mPassword.getText().toString();
 

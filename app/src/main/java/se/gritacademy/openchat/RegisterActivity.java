@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-import se.gritacademy.openchat.models.RegisterController;
+import se.gritacademy.openchat.controller.Register;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     // If validation is true, create new account with register controller.
     public void registerAccount(View view) {
 
-        RegisterController rc = new RegisterController();
+        Register rc = new Register();
 
         String newUser = mUsername.getText().toString();
         String newEmail = mEmail.getText().toString();

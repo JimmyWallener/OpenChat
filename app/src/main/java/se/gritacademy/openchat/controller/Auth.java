@@ -1,4 +1,4 @@
-package se.gritacademy.openchat.models;
+package se.gritacademy.openchat.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import se.gritacademy.openchat.ChatActivity;
 
-public class AuthController {
+public class Auth {
 
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
